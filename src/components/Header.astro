@@ -1,0 +1,35 @@
+---
+const navItems = [
+  { label: "Home", href: "/" },
+  { label: "Blog", href: "/blog" },
+  { label: "About", href: "/about" },
+];
+---
+
+<header class="border-b border-jet-black/10 bg-white">
+  <div
+    class="mx-auto flex w-full max-w-6xl items-center justify-between gap-6 px-6 py-5"
+  >
+    <a href="/" class="font-display text-lg font-semibold text-onyx">
+      Orion Vale
+      <span class="ml-2 text-sm font-medium text-jet-black/70"
+        >Crypto Analyst</span
+      >
+    </a>
+    <nav
+      aria-label="Primary"
+      class="flex items-center gap-6 text-sm font-medium"
+    >
+      {
+        navItems.map((item) => (
+          <a
+            href={item.href}
+            class="text-jet-black/80 transition hover:text-onyx"
+          >
+            {item.label}
+          </a>
+        ))
+      }
+    </nav>
+  </div>
+</header>
