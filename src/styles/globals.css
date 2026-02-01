@@ -32,6 +32,16 @@
 /* `@theme inline` is required when referencing CSS custom properties */
 /* @see https://tailwindcss.com/docs/theme#referencing-other-variables */
 @theme inline {
+  /*
+    Color palette: Moonlit Golden Glow
+    Source: https://coolors.co/palette/0b0c0c-2a2e34-e9eaec-fbe134-e4b61a
+  */
+  --color-onyx: #0b0c0c;
+  --color-jet-black: #2a2e34;
+  --color-platinum: #e9eaec;
+  --color-bright-gold: #fbe134;
+  --color-saffron: #e4b61a;
+
   /* Typography */
   --font-sans: var(--font-inter);
   --font-display: var(--font-space-grotesk);
