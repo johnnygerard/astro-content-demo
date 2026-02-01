@@ -1,7 +1,7 @@
 ---
 title: "Bitcoin, Ethereum, and the Rise of Stablecoins"
 subtitle: "Why the base assets and on‑chain dollars define this era"
-publicationDate: "2026-02-01T15:00:00Z"
+publicationDate: "2026-02-03T15:00:00Z"
 tags:
   - bitcoin
   - ethereum
