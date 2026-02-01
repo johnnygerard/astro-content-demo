@@ -3,18 +3,13 @@ import { Picture } from "astro:assets";
 import { getCollection } from "astro:content";
 import ArrowRight from "~/components/svg/icons/ArrowRight.astro";
 import Layout from "~/layouts/Layout.astro";
+import { formatDate } from "~/utils/format-date";
 
 const posts = (await getCollection("blog")).toSorted(
   (a, b) =>
     new Date(b.data.publicationDate).getTime() -
     new Date(a.data.publicationDate).getTime(),
 );
-
-const formatter = new Intl.DateTimeFormat("en-US", {
-  year: "numeric",
-  month: "long",
-  day: "2-digit",
-});
 ---
 
 <Layout title="Blog">
@@ -58,7 +53,7 @@ const formatter = new Intl.DateTimeFormat("en-US", {
               <div class="flex flex-1 flex-col gap-4 px-6 pt-6 pb-8 lg:pr-8 lg:pl-0">
                 <div class="space-y-2">
                   <p class="text-xs font-semibold tracking-[0.2em] text-jet-black/60 uppercase">
-                    {formatter.format(new Date(post.data.publicationDate))}
+                    {formatDate(post.data.publicationDate)}
                   </p>
                   <h2 class="font-display text-2xl font-semibold text-onyx">
                     {post.data.title}

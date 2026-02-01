@@ -3,6 +3,7 @@ import { Picture } from "astro:assets";
 import { getCollection } from "astro:content";
 import ArrowRight from "~/components/svg/icons/ArrowRight.astro";
 import Layout from "~/layouts/Layout.astro";
+import { formatDate } from "~/utils/format-date";
 
 const posts = (await getCollection("blog")).toSorted(
   (a, b) =>
@@ -12,12 +13,6 @@ const posts = (await getCollection("blog")).toSorted(
 
 const featuredPost = posts[0];
 if (!featuredPost) throw new Error("No blog posts found.");
-
-const formatter = new Intl.DateTimeFormat("en-US", {
-  year: "numeric",
-  month: "long",
-  day: "2-digit",
-});
 ---
 
 <Layout>
@@ -199,7 +194,7 @@ const formatter = new Intl.DateTimeFormat("en-US", {
             <p
               class="text-xs font-semibold tracking-[0.2em] text-jet-black/60 uppercase"
             >
-              {formatter.format(new Date(featuredPost.data.publicationDate))}
+              {formatDate(featuredPost.data.publicationDate)}
             </p>
             <h3 class="font-display text-2xl font-semibold text-onyx">
               {featuredPost.data.title}
