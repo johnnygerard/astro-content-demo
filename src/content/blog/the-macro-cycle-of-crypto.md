@@ -10,6 +10,8 @@ tags:
 image:
   src: "/assets/images/crypto-macro-cycle.png"
   alt: "Flowing lines representing market cycles"
+  width: 2816
+  height: 1536
 ---
 
 As a cryptocurrency expert and the owner of this website, I’m often asked, “What actually drives the crypto market?” The short answer is **liquidity and narratives**. The longer answer is a mix of macroeconomic conditions, technological adoption, and feedback loops that are unique to digital assets.

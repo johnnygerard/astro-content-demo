@@ -10,6 +10,8 @@ tags:
 image:
   src: "/assets/images/crypto-security.png"
   alt: "Abstract shield protecting digital coins"
+  width: 2816
+  height: 1536
 ---
 
 As both a long‑time cryptocurrency practitioner and the owner of this site, I’ve seen the full spectrum of outcomes—from disciplined custody that preserves capital to avoidable losses caused by sloppy operational practices. Security is not a single tool; it’s a stack of decisions and routines. This post distills the essentials I rely on.
