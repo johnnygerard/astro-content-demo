@@ -1,6 +1,7 @@
 ---
 import { Picture } from "astro:assets";
 import { getCollection } from "astro:content";
+import ArrowRight from "~/components/svg/icons/ArrowRight.astro";
 import Layout from "~/layouts/Layout.astro";
 
 const posts = (await getCollection("blog")).toSorted(
@@ -79,8 +80,9 @@ const formatter = new Intl.DateTimeFormat("en-US", {
                   </ul>
                 )}
 
-                <span class="text-sm font-semibold text-onyx">
-                  Read article →
+                <span class="inline-flex items-center gap-2 text-sm font-semibold text-onyx">
+                  Read article
+                  <ArrowRight class="size-4" aria-hidden="true" />
                 </span>
               </div>
             </a>
