@@ -7,7 +7,7 @@ tags:
   - ethereum
   - stablecoins
   - payments
-image: "~/assets/images/bitcoin-ethereum-stablecoins.png"
+image: "~/assets/images/blog/bitcoin-ethereum-stablecoins.png"
 imageAlt: "Icons representing Bitcoin, Ethereum, and stablecoins"
 ---
 

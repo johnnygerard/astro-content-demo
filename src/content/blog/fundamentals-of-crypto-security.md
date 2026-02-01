@@ -7,7 +7,7 @@ tags:
   - custody
   - wallets
   - risk-management
-image: "~/assets/images/crypto-security.png"
+image: "~/assets/images/blog/crypto-security.png"
 imageAlt: "Abstract shield protecting digital coins"
 ---
 
