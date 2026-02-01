@@ -1,5 +1,6 @@
 ---
 import { Font } from "astro:assets";
+import Favicon from "~/components/Favicon.astro";
 import "~/styles/globals.css";
 
 type Props = {
@@ -16,21 +17,7 @@ const { title } = Astro.props;
     {/* Google Fonts (self-hosted) */}
     <Font cssVariable="--font-inter" preload={true} />
     <Font cssVariable="--font-space-grotesk" preload={true} />
-    {/* Favicons */}
-    <link
-      rel="icon"
-      href="/assets/images/favicon-light.png"
-      media="(prefers-color-scheme: light)"
-      type="image/png"
-      sizes="32x32"
-    />
-    <link
-      rel="icon"
-      href="/assets/images/favicon-dark.png"
-      media="(prefers-color-scheme: dark)"
-      type="image/png"
-      sizes="32x32"
-    />
+    <Favicon />
     <meta name="generator" content={Astro.generator} />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
