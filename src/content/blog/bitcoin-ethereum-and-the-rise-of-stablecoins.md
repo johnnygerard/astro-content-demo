@@ -7,11 +7,8 @@ tags:
   - ethereum
   - stablecoins
   - payments
-image:
-  src: "/assets/images/bitcoin-ethereum-stablecoins.png"
-  alt: "Icons representing Bitcoin, Ethereum, and stablecoins"
-  width: 2816
-  height: 1536
+image: "~/assets/images/bitcoin-ethereum-stablecoins.png"
+imageAlt: "Icons representing Bitcoin, Ethereum, and stablecoins"
 ---
 
 I’ve been in this industry long enough to see multiple cycles and paradigm shifts. As the owner of this site, I want to clarify how I think about the three pillars shaping today’s crypto landscape: **Bitcoin, Ethereum, and stablecoins**.
