@@ -32,4 +32,7 @@
 /* `@theme inline` is required when referencing CSS custom properties */
 /* @see https://tailwindcss.com/docs/theme#referencing-other-variables */
 @theme inline {
+  /* Typography */
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-space-grotesk);
 }
