@@ -1,17 +1,17 @@
 ---
+import { Picture } from "astro:assets";
 import { getCollection } from "astro:content";
 import Layout from "~/layouts/Layout.astro";
 
-const posts = await getCollection("blog");
-const sortedPosts = posts.toSorted(
+const posts = (await getCollection("blog")).toSorted(
   (a, b) =>
-    new Date(b.data.publicationDate).valueOf() -
-    new Date(a.data.publicationDate).valueOf(),
+    new Date(b.data.publicationDate).getTime() -
+    new Date(a.data.publicationDate).getTime(),
 );
 
 const formatter = new Intl.DateTimeFormat("en-US", {
   year: "numeric",
-  month: "short",
+  month: "long",
   day: "2-digit",
 });
 ---
@@ -22,40 +22,53 @@ const formatter = new Intl.DateTimeFormat("en-US", {
       <p
         class="text-sm font-semibold tracking-[0.2em] text-jet-black/60 uppercase"
       >
-        Insights
+        Market notes & research
       </p>
       <h1 class="font-display text-4xl font-semibold text-onyx sm:text-5xl">
-        Market notes &amp; research
+        Blog
       </h1>
-      <p class="max-w-2xl text-base text-jet-black/70">
-        Practical analysis on Bitcoin, Ethereum, macro trends, and risk
-        management. Each article links to a dedicated post page that we’ll build
-        next.
+      <p class="max-w-2xl text-lg text-jet-black/70">
+        Deep dives on macro cycles, market structure, and risk management in
+        digital assets.
       </p>
     </div>
 
-    <div class="mt-10 grid gap-6">
+    <div class="mt-10 grid gap-8">
       {
-        sortedPosts.map((post) => (
-          <article class="rounded-2xl border border-jet-black/10 bg-white p-6 shadow-sm transition hover:border-jet-black/20">
-            <div class="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
-              <div class="space-y-3">
-                <p class="text-xs font-semibold tracking-[0.2em] text-jet-black/60 uppercase">
-                  {formatter.format(new Date(post.data.publicationDate))}
-                </p>
-                <h2 class="font-display text-2xl font-semibold text-onyx">
-                  <a
-                    href={`/blog/${post.id}`}
-                    class="transition hover:text-jet-black"
-                  >
-                    {post.data.title}
-                  </a>
-                </h2>
-                {post.data.subtitle && (
-                  <p class="text-base text-jet-black/70">
-                    {post.data.subtitle}
+        posts.map((post) => (
+          <article class="group overflow-hidden rounded-3xl border border-jet-black/10 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-md">
+            <a
+              href={`/blog/${post.id}`}
+              class="flex h-full flex-col gap-6 lg:flex-row"
+            >
+              {post.data.image && (
+                <div class="w-full overflow-hidden bg-platinum/40 lg:w-5/12">
+                  <Picture
+                    alt={post.data.imageAlt}
+                    class="h-full w-full object-cover"
+                    fallbackFormat="webp"
+                    formats={["avif"]}
+                    sizes="(min-width: 64rem) calc(min(72rem, 100vw)*5/12), 100vw"
+                    src={post.data.image}
+                    widths={[320, 480, 640, 960, 1280, 1600, 1920, 2560, 2816]}
+                  />
+                </div>
+              )}
+              <div class="flex flex-1 flex-col gap-4 px-6 pt-6 pb-8 lg:pr-8 lg:pl-0">
+                <div class="space-y-2">
+                  <p class="text-xs font-semibold tracking-[0.2em] text-jet-black/60 uppercase">
+                    {formatter.format(new Date(post.data.publicationDate))}
                   </p>
-                )}
+                  <h2 class="font-display text-2xl font-semibold text-onyx">
+                    {post.data.title}
+                  </h2>
+                  {post.data.subtitle && (
+                    <p class="text-base text-jet-black/70">
+                      {post.data.subtitle}
+                    </p>
+                  )}
+                </div>
+
                 {post.data.tags?.length && (
                   <ul class="flex flex-wrap gap-2 text-xs font-medium text-jet-black/70">
                     {post.data.tags.map((tag) => (
@@ -65,19 +78,12 @@ const formatter = new Intl.DateTimeFormat("en-US", {
                     ))}
                   </ul>
                 )}
-              </div>
 
-              {post.data.image && (
-                <div class="w-full overflow-hidden rounded-2xl border border-jet-black/10 md:w-64">
-                  <img
-                    src={post.data.image.src}
-                    alt={post.data.image.alt}
-                    loading="lazy"
-                    class="h-full w-full object-cover"
-                  />
-                </div>
-              )}
-            </div>
+                <span class="text-sm font-semibold text-onyx">
+                  Read article →
+                </span>
+              </div>
+            </a>
           </article>
         ))
       }
