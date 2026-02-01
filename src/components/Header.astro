@@ -1,9 +1,5 @@
 ---
-const navItems = [
-  { label: "Home", href: "/" },
-  { label: "Blog", href: "/blog" },
-  { label: "About", href: "/about" },
-];
+import { navigationLinks } from "~/constants/navigation-links";
 ---
 
 <header class="border-b border-jet-black/10 bg-white">
@@ -21,12 +17,9 @@ const navItems = [
       class="flex items-center gap-6 text-sm font-medium"
     >
       {
-        navItems.map((item) => (
-          <a
-            href={item.href}
-            class="text-jet-black/80 transition hover:text-onyx"
-          >
-            {item.label}
+        navigationLinks.map(({ href, label }) => (
+          <a href={href} class="text-jet-black/80 transition hover:text-onyx">
+            {label}
           </a>
         ))
       }

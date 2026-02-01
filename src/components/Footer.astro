@@ -1,9 +1,5 @@
 ---
-const navItems = [
-  { label: "Home", href: "/" },
-  { label: "Blog", href: "/blog" },
-  { label: "About", href: "/about" },
-];
+import { navigationLinks } from "~/constants/navigation-links";
 
 const year = new Date().getFullYear();
 ---
@@ -22,12 +18,9 @@ const year = new Date().getFullYear();
     <div class="flex flex-col items-start gap-3 sm:items-end">
       <nav aria-label="Footer" class="flex gap-5">
         {
-          navItems.map((item) => (
-            <a
-              href={item.href}
-              class="text-jet-black/70 transition hover:text-onyx"
-            >
-              {item.label}
+          navigationLinks.map(({ href, label }) => (
+            <a href={href} class="text-jet-black/70 transition hover:text-onyx">
+              {label}
             </a>
           ))
         }
