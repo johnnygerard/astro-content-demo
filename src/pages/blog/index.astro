@@ -1,0 +1,89 @@
+---
+import { Picture } from "astro:assets";
+import { getCollection } from "astro:content";
+import ArrowRight from "~/components/svg/icons/ArrowRight.astro";
+import Layout from "~/layouts/Layout.astro";
+import { formatDate } from "~/utils/format-date";
+
+const posts = (await getCollection("blog")).toSorted(
+  (a, b) =>
+    new Date(b.data.publicationDate).getTime() -
+    new Date(a.data.publicationDate).getTime(),
+);
+---
+
+<Layout title="Blog">
+  <section class="mx-auto w-full max-w-6xl px-6 py-12">
+    <div class="space-y-3">
+      <p
+        class="text-sm font-semibold tracking-[0.2em] text-jet-black/60 uppercase"
+      >
+        Market notes & research
+      </p>
+      <h1 class="font-display text-4xl font-semibold text-onyx sm:text-5xl">
+        Blog
+      </h1>
+      <p class="max-w-2xl text-lg text-jet-black/70">
+        Deep dives on macro cycles, market structure, and risk management in
+        digital assets.
+      </p>
+    </div>
+
+    <div class="mt-10 grid gap-8">
+      {
+        posts.map((post) => (
+          <article class="group overflow-hidden rounded-3xl border border-jet-black/10 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-md">
+            <a
+              href={`/blog/${post.id}`}
+              class="flex h-full flex-col gap-6 lg:flex-row"
+            >
+              {post.data.image && (
+                <div class="w-full overflow-hidden bg-platinum/40 lg:w-5/12">
+                  <Picture
+                    alt={post.data.imageAlt}
+                    class="h-full w-full object-cover"
+                    fallbackFormat="webp"
+                    formats={["avif"]}
+                    sizes="(min-width: 64rem) calc(min(72rem, 100vw)*5/12), 100vw"
+                    src={post.data.image}
+                    widths={[320, 480, 640, 960, 1280, 1600, 1920, 2560, 2816]}
+                  />
+                </div>
+              )}
+              <div class="flex flex-1 flex-col gap-4 px-6 pt-6 pb-8 lg:pr-8 lg:pl-0">
+                <div class="space-y-2">
+                  <p class="text-xs font-semibold tracking-[0.2em] text-jet-black/60 uppercase">
+                    {formatDate(post.data.publicationDate)}
+                  </p>
+                  <h2 class="font-display text-2xl font-semibold text-onyx">
+                    {post.data.title}
+                  </h2>
+                  {post.data.subtitle && (
+                    <p class="text-base text-jet-black/70">
+                      {post.data.subtitle}
+                    </p>
+                  )}
+                </div>
+
+                {post.data.tags?.length && (
+                  <ul class="flex flex-wrap gap-2 text-xs font-medium text-jet-black/70">
+                    {post.data.tags.map((tag) => (
+                      <li class="rounded-full border border-jet-black/10 px-3 py-1">
+                        {tag}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+
+                <span class="inline-flex items-center gap-2 text-sm font-semibold text-onyx">
+                  Read article
+                  <ArrowRight class="size-4" aria-hidden="true" />
+                </span>
+              </div>
+            </a>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+</Layout>

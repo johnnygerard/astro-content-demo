@@ -1,0 +1,33 @@
+---
+import { navigationLinks } from "~/constants/navigation-links";
+
+const year = new Date().getFullYear();
+---
+
+<footer class="border-t border-jet-black/10 bg-white">
+  <div
+    class="mx-auto flex w-full max-w-6xl flex-col gap-6 px-6 py-8 text-sm text-jet-black/70 sm:flex-row sm:items-center sm:justify-between"
+  >
+    <div class="space-y-2">
+      <p class="font-display text-base font-semibold text-onyx">Orion Vale</p>
+      <p class="max-w-md">
+        Market notes, macro theses, and risk insights for navigating the digital
+        asset cycle.
+      </p>
+    </div>
+    <div class="flex flex-col items-start gap-3 sm:items-end">
+      <nav aria-label="Footer" class="flex gap-5">
+        {
+          navigationLinks.map(({ href, label }) => (
+            <a href={href} class="text-jet-black/70 transition hover:text-onyx">
+              {label}
+            </a>
+          ))
+        }
+      </nav>
+      <p class="text-xs text-jet-black/60">
+        © {year} Orion Vale. All rights reserved.
+      </p>
+    </div>
+  </div>
+</footer>

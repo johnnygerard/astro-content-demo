@@ -1,8 +1,237 @@
 ---
-import Starter from "~/components/Starter.astro";
+import { Picture } from "astro:assets";
+import { getCollection } from "astro:content";
+import ArrowRight from "~/components/svg/icons/ArrowRight.astro";
 import Layout from "~/layouts/Layout.astro";
+import { formatDate } from "~/utils/format-date";
+
+const posts = (await getCollection("blog")).toSorted(
+  (a, b) =>
+    new Date(b.data.publicationDate).getTime() -
+    new Date(a.data.publicationDate).getTime(),
+);
+
+const featuredPost = posts[0];
+if (!featuredPost) throw new Error("No blog posts found.");
 ---
 
-<Layout title="Astro 5 Starter">
-  <Starter />
+<Layout>
+  <section class="bg-onyx text-white">
+    <div class="mx-auto w-full max-w-6xl px-6 py-16">
+      <div class="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+        <div class="space-y-6">
+          <p
+            class="text-sm font-semibold tracking-[0.2em] text-bright-gold uppercase"
+          >
+            Crypto analyst
+          </p>
+          <h1 class="font-display text-4xl font-semibold sm:text-5xl">
+            Macro clarity for the next digital asset cycle.
+          </h1>
+          <p class="max-w-xl text-lg text-platinum/80">
+            Orion Vale delivers research on liquidity, market structure, and
+            risk signals so you can position with conviction.
+          </p>
+          <div class="flex flex-wrap items-center gap-4">
+            <a
+              href="/blog"
+              class="inline-flex items-center gap-2 rounded-full bg-bright-gold px-6 py-3 text-sm font-semibold text-onyx transition hover:-translate-y-0.5 hover:bg-bright-gold/90"
+            >
+              Read the research
+              <ArrowRight class="size-4" aria-hidden="true" />
+            </a>
+            <a
+              href="mailto:hello@orionvale.example"
+              class="inline-flex items-center gap-2 rounded-full border border-white/15 px-6 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:border-white/40"
+            >
+              Request a briefing
+            </a>
+          </div>
+        </div>
+
+        <div class="grid gap-4 sm:grid-cols-2">
+          <div
+            class="rounded-3xl border border-white/10 bg-white/5 p-6 shadow-sm"
+          >
+            <p
+              class="text-xs font-semibold tracking-[0.2em] text-bright-gold uppercase"
+            >
+              Coverage
+            </p>
+            <p class="mt-3 text-3xl font-semibold text-white">6+</p>
+            <p class="mt-2 text-sm text-platinum/70">
+              Macro themes tracked across cycles, liquidity, and policy.
+            </p>
+          </div>
+          <div
+            class="rounded-3xl border border-white/10 bg-white/5 p-6 shadow-sm"
+          >
+            <p
+              class="text-xs font-semibold tracking-[0.2em] text-bright-gold uppercase"
+            >
+              Signal windows
+            </p>
+            <p class="mt-3 text-3xl font-semibold text-white">12</p>
+            <p class="mt-2 text-sm text-platinum/70">
+              Tactical updates per year to recalibrate portfolio risk.
+            </p>
+          </div>
+          <div
+            class="rounded-3xl border border-white/10 bg-white/5 p-6 shadow-sm"
+          >
+            <p
+              class="text-xs font-semibold tracking-[0.2em] text-bright-gold uppercase"
+            >
+              Focus
+            </p>
+            <p class="mt-3 text-3xl font-semibold text-white">On-chain</p>
+            <p class="mt-2 text-sm text-platinum/70">
+              Flow intelligence paired with macro regime analysis.
+            </p>
+          </div>
+          <div
+            class="rounded-3xl border border-white/10 bg-white/5 p-6 shadow-sm"
+          >
+            <p
+              class="text-xs font-semibold tracking-[0.2em] text-bright-gold uppercase"
+            >
+              Clients
+            </p>
+            <p class="mt-3 text-3xl font-semibold text-white">Advisors</p>
+            <p class="mt-2 text-sm text-platinum/70">
+              Built for funds, desks, and founders navigating volatility.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mx-auto w-full max-w-6xl px-6 py-14">
+    <div class="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+      <div class="space-y-4">
+        <p
+          class="text-sm font-semibold tracking-[0.2em] text-jet-black/60 uppercase"
+        >
+          What you get
+        </p>
+        <h2 class="font-display text-3xl font-semibold text-onyx">
+          Decision support built for volatile markets.
+        </h2>
+        <p class="text-base text-jet-black/70">
+          Every briefing blends quantitative signals with narrative context so
+          you can understand the why, not just the what.
+        </p>
+      </div>
+      <div class="grid gap-4 sm:grid-cols-2">
+        {
+          [
+            "Macro regime dashboards",
+            "Liquidity cycle maps",
+            "Stablecoin flow tracking",
+            "Risk-on / risk-off playbooks",
+          ].map((item) => (
+            <div class="rounded-3xl border border-jet-black/10 bg-white p-5 text-sm font-medium text-onyx shadow-sm">
+              {item}
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-onyx text-white">
+    <div class="mx-auto w-full max-w-6xl px-6 py-14">
+      <div
+        class="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between"
+      >
+        <div class="space-y-2">
+          <p
+            class="text-sm font-semibold tracking-[0.2em] text-bright-gold uppercase"
+          >
+            Featured insight
+          </p>
+          <h2 class="font-display text-3xl font-semibold">
+            Latest from the research desk.
+          </h2>
+          <p class="max-w-2xl text-base text-platinum/80">
+            A single spotlight from the blog—read the full archive for deeper
+            dives.
+          </p>
+        </div>
+        <a
+          href="/blog"
+          class="inline-flex items-center gap-2 text-sm font-semibold text-white"
+        >
+          View all articles
+          <ArrowRight class="size-4" aria-hidden="true" />
+        </a>
+      </div>
+
+      <article
+        class="mt-10 overflow-hidden rounded-3xl border border-white/10 bg-white/5 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
+      >
+        <a
+          href={`/blog/${featuredPost.id}`}
+          class="flex h-full flex-col gap-6 lg:flex-row"
+        >
+          {
+            featuredPost.data.image && (
+              <div class="w-full overflow-hidden bg-white/10 lg:w-5/12">
+                <Picture
+                  alt={featuredPost.data.imageAlt}
+                  class="h-full w-full object-cover"
+                  fallbackFormat="webp"
+                  formats={["avif"]}
+                  sizes="(min-width: 64rem) calc(min(72rem, 100vw)*5/12), 100vw"
+                  src={featuredPost.data.image}
+                  widths={[320, 480, 640, 960, 1280, 1600, 1920, 2560, 2816]}
+                />
+              </div>
+            )
+          }
+          <div
+            class="flex flex-1 flex-col gap-4 px-6 pt-6 pb-8 lg:pr-8 lg:pl-0"
+          >
+            <div class="space-y-2">
+              <p
+                class="text-xs font-semibold tracking-[0.2em] text-bright-gold uppercase"
+              >
+                {formatDate(featuredPost.data.publicationDate)}
+              </p>
+              <h3 class="font-display text-2xl font-semibold text-white">
+                {featuredPost.data.title}
+              </h3>
+              {
+                featuredPost.data.subtitle && (
+                  <p class="text-base text-platinum/80">
+                    {featuredPost.data.subtitle}
+                  </p>
+                )
+              }
+            </div>
+
+            {
+              featuredPost.data.tags?.length && (
+                <ul class="flex flex-wrap gap-2 text-xs font-medium text-platinum/70">
+                  {featuredPost.data.tags.map((tag) => (
+                    <li class="rounded-full border border-white/10 px-3 py-1">
+                      {tag}
+                    </li>
+                  ))}
+                </ul>
+              )
+            }
+
+            <span
+              class="inline-flex items-center gap-2 text-sm font-semibold text-white"
+            >
+              Read featured article
+              <ArrowRight class="size-4" aria-hidden="true" />
+            </span>
+          </div>
+        </a>
+      </article>
+    </div>
+  </section>
 </Layout>
