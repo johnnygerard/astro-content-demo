@@ -1,0 +1,40 @@
+{
+  "hero": {
+    "eyebrow": "About Orion Vale",
+    "title": "Research with conviction, delivered with clarity.",
+    "lead": "Orion Vale is a research desk focused on macro regimes, liquidity cycles, and on-chain flows—turning complex signals into structured narratives for decision-makers in digital assets.",
+    "stats": [
+      {
+        "label": "Audience",
+        "value": "Funds & advisors",
+        "detail": "Built for teams navigating volatility."
+      },
+      {
+        "label": "Signals",
+        "value": "Liquidity",
+        "detail": "Stablecoin and flow intelligence."
+      },
+      {
+        "label": "Cadence",
+        "value": "10–12 updates",
+        "detail": "Tactical research per year."
+      },
+      {
+        "label": "Approach",
+        "value": "Macro-first",
+        "detail": "Contextual frameworks for risk."
+      }
+    ]
+  },
+  "work": {
+    "eyebrow": "How we work",
+    "title": "Structured frameworks, not noise.",
+    "body": "Each briefing combines regime analysis, liquidity diagnostics, and actionable scenarios. We focus on repeatable decision processes so you can adapt as the market evolves.",
+    "items": [
+      "Macro regime playbooks",
+      "Stablecoin issuance dashboards",
+      "On-chain flow alerts",
+      "Risk checkpoints & watchlists"
+    ]
+  }
+}
