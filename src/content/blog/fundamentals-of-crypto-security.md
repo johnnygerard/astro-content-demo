@@ -1,13 +1,13 @@
 ---
 title: "Fundamentals of Crypto Security: Custody, Key Management, and Risk"
 subtitle: "A practical, owner-operator perspective on protecting digital assets"
-publicationDate: "2026-01-31T09:00:00Z"
+publicationDate: 2026-01-31T09:00:00Z
 tags:
   - security
   - custody
   - wallets
   - risk-management
-image: "~/assets/images/blog/crypto-security.png"
+image: "../../assets/images/blog/crypto-security.png"
 imageAlt: "Abstract shield protecting digital coins"
 ---
 

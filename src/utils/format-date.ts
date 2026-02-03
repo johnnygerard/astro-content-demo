@@ -4,5 +4,4 @@ const formatter = new Intl.DateTimeFormat("en-US", {
   day: "numeric",
 });
 
-export const formatDate = (iso: string): string =>
-  formatter.format(new Date(iso));
+export const formatDate = (date: Date): string => formatter.format(date);

@@ -1,13 +1,13 @@
 ---
 title: "The Macro Cycle of Crypto: Liquidity, Narratives, and Adoption"
 subtitle: "How I map the market as a practitioner and site owner"
-publicationDate: "2026-02-02T12:00:00Z"
+publicationDate: 2026-02-02T12:00:00Z
 tags:
   - markets
   - macro
   - adoption
   - liquidity
-image: "~/assets/images/blog/crypto-macro-cycle.png"
+image: "../../assets/images/blog/crypto-macro-cycle.png"
 imageAlt: "Flowing lines representing market cycles"
 ---
 

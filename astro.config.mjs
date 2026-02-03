@@ -9,6 +9,9 @@ export default defineConfig({
   build: {
     format: "file",
   },
+  // Because `npm ci` removes `node_modules`, override the default cache directory
+  // to ensure optimized assets are reused between CI builds.
+  cacheDir: ".astro-cache",
   experimental: {
     fonts: [
       // Inter: sans-serif typeface

@@ -1,13 +1,13 @@
 ---
 title: "Bitcoin, Ethereum, and the Rise of Stablecoins"
 subtitle: "Why the base assets and on‑chain dollars define this era"
-publicationDate: "2026-02-03T15:00:00Z"
+publicationDate: 2026-02-03T15:00:00Z
 tags:
   - bitcoin
   - ethereum
   - stablecoins
   - payments
-image: "~/assets/images/blog/bitcoin-ethereum-stablecoins.png"
+image: "../../assets/images/blog/bitcoin-ethereum-stablecoins.png"
 imageAlt: "Icons representing Bitcoin, Ethereum, and stablecoins"
 ---
 
