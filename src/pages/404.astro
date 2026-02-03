@@ -1,4 +1,6 @@
 ---
+import { Picture } from "astro:assets";
+import cryptoHorizon from "~/assets/images/404-crypto-data-horizon.png";
 import Layout from "~/layouts/Layout.astro";
 ---
 
@@ -16,6 +18,19 @@ import Layout from "~/layouts/Layout.astro";
         Page Not Found
       </h1>
     </hgroup>
+    <div
+      class="mx-auto w-full max-w-2xl overflow-hidden rounded-3xl border border-jet-black/10 bg-white shadow-sm"
+    >
+      <Picture
+        alt="Crypto data horizon illustration"
+        class="h-full w-full object-cover"
+        fallbackFormat="webp"
+        formats={["avif"]}
+        sizes="min(42rem, 100vw)"
+        src={cryptoHorizon}
+        widths={[320, 480, 640, 960, 1280, 1600, 1920]}
+      />
+    </div>
     <p class="mx-auto max-w-xl text-base leading-relaxed text-jet-black/70">
       Sorry, the page you are looking for does not exist or has been moved.
     </p>
