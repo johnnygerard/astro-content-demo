@@ -7,7 +7,7 @@ tags:
   - macro
   - adoption
   - liquidity
-image: "~/assets/images/blog/crypto-macro-cycle.png"
+image: "../../assets/images/blog/crypto-macro-cycle.png"
 imageAlt: "Flowing lines representing market cycles"
 ---
 
