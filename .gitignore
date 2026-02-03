@@ -5,6 +5,7 @@
 
 # Astro
 /.astro/
+/.astro-cache/
 /dist/
 
 # Wrangler
