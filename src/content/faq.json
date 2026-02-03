@@ -1,34 +1,34 @@
-{
-  "0": {
-    "answer": "Each briefing combines macro regime analysis, liquidity signals, and on-chain flow intelligence with clear takeaways for positioning and risk management.",
-    "question": "What does Orion Vale cover in each briefing?"
+[
+  {
+    "question": "What does Orion Vale cover in each briefing?",
+    "answer": "Each briefing combines macro regime analysis, liquidity signals, and on-chain flow intelligence with clear takeaways for positioning and risk management."
   },
-  "1": {
-    "answer": "The desk publishes ongoing thematic research plus 10–12 tactical updates per year to reflect market inflections.",
-    "question": "How often is research published?"
+  {
+    "question": "How often is research published?",
+    "answer": "The desk publishes ongoing thematic research plus 10–12 tactical updates per year to reflect market inflections."
   },
-  "2": {
-    "answer": "The content is tailored for funds, trading desks, advisors, and founders who need structured signal interpretation and portfolio context.",
-    "question": "Who is the research designed for?"
+  {
+    "question": "Who is the research designed for?",
+    "answer": "The content is tailored for funds, trading desks, advisors, and founders who need structured signal interpretation and portfolio context."
   },
-  "3": {
-    "answer": "Yes. Stablecoin issuance, redemption, and cross-chain flow data are core inputs to our liquidity and risk assessments.",
-    "question": "Do you cover stablecoins and liquidity flows?"
+  {
+    "question": "Do you cover stablecoins and liquidity flows?",
+    "answer": "Yes. Stablecoin issuance, redemption, and cross-chain flow data are core inputs to our liquidity and risk assessments."
   },
-  "4": {
-    "answer": "It is both: we explain the macro “why” and translate it into actionable scenarios, watchlists, and decision checkpoints.",
-    "question": "Is the content educational or actionable?"
+  {
+    "question": "Is the content educational or actionable?",
+    "answer": "It is both: we explain the macro “why” and translate it into actionable scenarios, watchlists, and decision checkpoints."
   },
-  "5": {
-    "answer": "Yes. You can request a tailored briefing based on your mandate, markets, and risk constraints.",
-    "question": "Can I request a custom briefing?"
+  {
+    "question": "Can I request a custom briefing?",
+    "answer": "Yes. You can request a tailored briefing based on your mandate, markets, and risk constraints."
   },
-  "6": {
-    "answer": "We provide research-driven frameworks and risk signals, not individualized investment advice.",
-    "question": "Do you provide portfolio recommendations?"
+  {
+    "question": "Do you provide portfolio recommendations?",
+    "answer": "We provide research-driven frameworks and risk signals, not individualized investment advice."
   },
-  "7": {
-    "answer": "Start with the featured insight on the home page, then explore the blog archive for deeper thematic coverage.",
-    "question": "Where should I start if I am new to the research?"
+  {
+    "question": "Where should I start if I am new to the research?",
+    "answer": "Start with the featured insight on the home page, then explore the blog archive for deeper thematic coverage."
   }
-}
+]

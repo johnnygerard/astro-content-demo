@@ -1,10 +1,6 @@
 ---
-import { getCollection } from "astro:content";
 import CaretDown from "~/components/svg/icons/CaretDown.astro";
-
-const faqItems = (await getCollection("faq"))
-  .toSorted((a, b) => a.id.localeCompare(b.id))
-  .map((entry) => entry.data);
+import faqItems from "~/content/faq.json";
 ---
 
 <section class="bg-onyx text-white">

@@ -1,4 +1,4 @@
-import { file, glob } from "astro/loaders";
+import { glob } from "astro/loaders";
 import { z } from "astro/zod";
 import { defineCollection } from "astro:content";
 
@@ -15,12 +15,4 @@ const blog = defineCollection({
     }),
 });
 
-const faq = defineCollection({
-  loader: file("src/content/faq.json"),
-  schema: z.object({
-    question: z.string(),
-    answer: z.string(),
-  }),
-});
-
-export const collections = { blog, faq };
+export const collections = { blog };
